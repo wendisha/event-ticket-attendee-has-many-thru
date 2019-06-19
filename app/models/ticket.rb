@@ -1,5 +1,14 @@
 class Ticket
-end
+    attr_accessor :event, :attendee 
+    @@all = []
 
-# Ticket.all
-    # Returns an array of all Ticket instances
+    def initialize(event, attendee)
+        @event = event
+        @attendee = attendee
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
+end
